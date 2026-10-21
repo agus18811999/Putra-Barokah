@@ -904,21 +904,22 @@
 <!-- ========================================================================= -->
 <!-- KATALOG SECTION: LUMINOUS MINT LUXURY (HIGH-END JEWELRY & OPTICAL SHOWCASE) -->
 <!-- ========================================================================= -->
-<section id="katalog" class="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-[#f7fcf9] via-[#eff8f3] to-[#f7fcf9] border-t border-emerald-100/80">
+<!-- ========================================================================= -->
+<!-- KATALOG SECTION: LUMINOUS MINT LUXURY DENGAN FLOATING SEARCH CONCIERGE    -->
+<!-- ========================================================================= -->
+<section id="katalog" class="py-14 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-b from-[#f7fcf9] via-[#eff8f3] to-[#f7fcf9] border-t border-emerald-100/80 select-none">
     
-    <!-- Ambient Light Ambient FX (Pencahayaan Hijau Lembut & Mewah) -->
-    <div class="absolute top-1/4 -right-20 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-gradient-to-bl from-emerald-200/40 via-teal-100/30 to-transparent rounded-full blur-[120px] pointer-events-none -z-0"></div>
-    <div class="absolute bottom-10 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-200/35 rounded-full blur-[130px] pointer-events-none -z-0"></div>
-    
-    <!-- Micro-Grid Texture Halus -->
+    <!-- Ambient Light Ambient FX (Pencahayaan Halus Latar Belakang) -->
+    <div class="absolute top-1/4 -right-24 w-80 sm:w-[520px] h-80 sm:h-[520px] bg-gradient-to-bl from-emerald-200/40 via-teal-100/30 to-transparent rounded-full blur-[130px] pointer-events-none -z-0"></div>
+    <div class="absolute bottom-10 -left-24 w-72 sm:w-[480px] h-72 sm:h-[480px] bg-emerald-200/30 rounded-full blur-[140px] pointer-events-none -z-0"></div>
     <div class="absolute inset-0 bg-[radial-gradient(#10b981_0.75px,transparent_0.75px)] [background-size:24px_24px] opacity-[0.05] pointer-events-none"></div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <!-- ============================================================= -->
-        <!-- 1. SECTION HEADER (KONTRAST TINGGI & TIPOGRAFI SANGAT MEWAH) -->
+        <!-- 1. SECTION HEADER                                             -->
         <!-- ============================================================= -->
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
             <!-- Eyebrow Pill -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-200/90 shadow-sm backdrop-blur-md mb-3">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
@@ -927,7 +928,7 @@
                 </span>
             </div>
 
-            <!-- Main Heading (Jelas, Tajam, Tidak Hilang/Putih) -->
+            <!-- Main Display Heading -->
             <h3 class="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-[1.2]">
                 Pilihan Koleksi <br class="hidden xs:inline">
                 <span class="bg-gradient-to-r from-emerald-800 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
@@ -935,7 +936,7 @@
                 </span>
             </h3>
             
-            <p class="text-xs sm:text-sm text-slate-500 mt-2.5 font-normal leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-500 mt-2.5 font-normal leading-relaxed px-2">
                 Temukan kacamata berpresisi tinggi, arloji elegan, jas hujan tangguh, hingga transaksi pulsa instan dan booking jasa servis terpercaya.
             </p>
 
@@ -945,25 +946,26 @@
         <!-- ============================================================= -->
         <!-- 2. CATEGORY PILLS (RESPONSIF MOBILE DENGAN SCROLL HALUS)      -->
         <!-- ============================================================= -->
-        <div class="mb-10 sm:mb-14">
-            <!-- Container Kategori: Horizontal scroll di HP tanpa nyungsep, Rapi di desktop -->
-            <div class="flex items-center sm:justify-center gap-2 sm:gap-2.5 overflow-x-auto pb-3 sm:pb-0 px-2 sm:px-0 hide-scroll select-none">
+        <div class="mb-6 sm:mb-8">
+            <div class="flex items-center sm:justify-center gap-2 sm:gap-2.5 overflow-x-auto pb-2.5 sm:pb-0 px-1 sm:px-0 hide-scroll">
                 
                 <!-- Tombol 'Semua' -->
-                <button @click="activeCategory = 'Semua'" 
+                <button type="button"
+                        @click="activeCategory = 'Semua'" 
                         :class="activeCategory === 'Semua' 
-                            ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-[0_8px_20px_rgba(5,150,105,0.32)] border-transparent scale-105' 
-                            : 'bg-white/90 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/80 border-emerald-100/90 shadow-sm'"
+                            ? 'bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 text-white shadow-[0_8px_20px_rgba(5,150,105,0.32)] border-transparent scale-105' 
+                            : 'bg-white/95 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/80 border-emerald-100/90 shadow-xs'"
                         class="px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 border shrink-0 active:scale-95">
                     Semua
                 </button>
 
-                <!-- List Kategori Dinamis dari Database -->
+                <!-- List Kategori Dinamis dari Backend -->
                 <template x-for="cat in categories" :key="cat">
-                    <button @click="activeCategory = cat" 
+                    <button type="button"
+                            @click="activeCategory = cat" 
                             :class="activeCategory === cat 
-                                ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-[0_8px_20px_rgba(5,150,105,0.32)] border-transparent scale-105' 
-                                : 'bg-white/90 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/80 border-emerald-100/90 shadow-sm'"
+                                ? 'bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 text-white shadow-[0_8px_20px_rgba(5,150,105,0.32)] border-transparent scale-105' 
+                                : 'bg-white/95 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/80 border-emerald-100/90 shadow-xs'"
                             class="px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 border shrink-0 active:scale-95"
                             x-text="cat">
                     </button>
@@ -972,7 +974,102 @@
         </div>
 
         <!-- ============================================================= -->
-        <!-- 3. LOADING STATE (CERAH & ELEGAN)                             -->
+        <!-- 3. ULTRA-LUXURY SEARCH CONCIERGE BAR (DI BAWAH TAB KATEGORI)  -->
+        <!-- ============================================================= -->
+        <div class="w-full max-w-2xl mx-auto mb-10 sm:mb-14 relative z-20">
+            
+            <!-- Glow Ambient Halo di Belakang Search Bar -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 via-teal-300/25 to-emerald-400/20 rounded-3xl sm:rounded-full blur-xl opacity-75 pointer-events-none"></div>
+
+            <!-- Main Search Capsule Container -->
+            <div class="relative bg-white/95 backdrop-blur-2xl border border-emerald-200/90 rounded-2xl sm:rounded-full p-2 sm:p-2.5 shadow-[0_12px_36px_-6px_rgba(16,185,129,0.14)] hover:shadow-[0_16px_40px_-6px_rgba(16,185,129,0.2)] focus-within:border-emerald-500 focus-within:ring-4 focus-within:ring-emerald-500/15 transition-all duration-300 flex flex-col xs:flex-row items-center gap-2.5">
+                
+                <!-- Bagian Kiri: Ikon Permata & Input Teks -->
+                <div class="flex items-center gap-2.5 sm:gap-3.5 w-full pl-2 sm:pl-3">
+                    
+                    <!-- Ikon Gem Pencarian -->
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-full bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 text-white flex items-center justify-center shrink-0 shadow-[0_4px_14px_rgba(5,150,105,0.32)]">
+                        <i class="fa-solid fa-magnifying-glass text-xs sm:text-sm"></i>
+                    </div>
+
+                    <!-- Input Kolom Pencarian -->
+                    <div class="flex-1 min-w-0 relative">
+                        <input type="text"
+                               x-model="searchQuery"
+                               placeholder="Cari produk, merk, tipe, atau layanan servis..."
+                               class="w-full bg-transparent text-slate-800 placeholder:text-slate-400 font-medium text-xs sm:text-sm outline-none border-none focus:ring-0 p-0 leading-normal"
+                               autocomplete="off">
+                    </div>
+
+                    <!-- Tombol Hapus Cepat (Clear Button) -->
+                    <button type="button"
+                            x-show="searchQuery && searchQuery.trim().length > 0"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 scale-75"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 scale-100"
+                            x-transition:leave-end="opacity-0 scale-75"
+                            @click="searchQuery = ''"
+                            aria-label="Bersihkan pencarian"
+                            title="Hapus pencarian"
+                            class="w-7 h-7 rounded-full bg-emerald-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 flex items-center justify-center transition-all shrink-0">
+                        <i class="fa-solid fa-xmark text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Bagian Kanan: Lencana Hitungan Hasil (Result Pill Counter) -->
+                <div class="w-full xs:w-auto flex items-center justify-between xs:justify-end gap-2 border-t xs:border-t-0 border-emerald-100 pt-2 xs:pt-0 shrink-0">
+                    <div class="px-3 py-1.5 rounded-xl sm:rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-800 flex items-center gap-1.5 shrink-0 shadow-2xs">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap" 
+                              x-text="filteredProducts.length + ' Produk'"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Quick Filter Chips: Rekomendasi Kata Kunci Populer -->
+            <div class="mt-3 px-2 flex items-center gap-1.5 sm:gap-2 overflow-x-auto hide-scroll text-[10px] sm:text-[11px] text-slate-500">
+                <span class="font-bold text-emerald-800 uppercase tracking-wider shrink-0 flex items-center gap-1">
+                    <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i> Tren:
+                </span>
+                
+                <button type="button"
+                        @click="searchQuery = 'Kacamata'" 
+                        class="px-2.5 py-1 rounded-full bg-white/80 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-200/70 hover:border-emerald-300 transition shrink-0 shadow-2xs">
+                    Kacamata
+                </button>
+                
+                <button type="button"
+                        @click="searchQuery = 'Casio'" 
+                        class="px-2.5 py-1 rounded-full bg-white/80 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-200/70 hover:border-emerald-300 transition shrink-0 shadow-2xs">
+                    Casio
+                </button>
+
+                <button type="button"
+                        @click="searchQuery = 'Anti Radiasi'" 
+                        class="px-2.5 py-1 rounded-full bg-white/80 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-200/70 hover:border-emerald-300 transition shrink-0 shadow-2xs">
+                    Anti Radiasi
+                </button>
+
+                <button type="button"
+                        @click="searchQuery = 'Jam Dinding'" 
+                        class="px-2.5 py-1 rounded-full bg-white/80 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-200/70 hover:border-emerald-300 transition shrink-0 shadow-2xs">
+                    Jam Dinding
+                </button>
+
+                <button type="button"
+                        @click="searchQuery = 'Servis'" 
+                        class="px-2.5 py-1 rounded-full bg-white/80 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-200/70 hover:border-emerald-300 transition shrink-0 shadow-2xs">
+                    Servis Jam
+                </button>
+            </div>
+
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- 4. LOADING STATE (CERAH & ELEGAN)                             -->
         <!-- ============================================================= -->
         <div x-show="loadingProducts" class="flex flex-col items-center justify-center py-20" x-cloak>
             <div class="w-12 h-12 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin mb-4 shadow-sm"></div>
@@ -980,23 +1077,26 @@
         </div>
 
         <!-- ============================================================= -->
-        <!-- 4. PRODUCTS GRID (KARTU PEARL GLASS BERKELAS TINGGI)         -->
+        <!-- 5. PRODUCTS GRID (KARTU PEARL GLASS BERKELAS TINGGI)         -->
         <!-- ============================================================= -->
-        <div x-show="!loadingProducts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-7" x-cloak>
+        <div x-show="!loadingProducts && filteredProducts.length > 0" 
+             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-7" 
+             x-cloak>
+            
             <template x-for="product in filteredProducts" :key="product.idProduct">
-                
                 <div class="group relative rounded-3xl bg-white/95 border border-emerald-100/90 shadow-[0_10px_30px_rgba(16,185,129,0.05)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.14)] hover:border-emerald-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden">
                     
                     <!-- Container Gambar Produk -->
                     <div class="relative h-60 sm:h-64 w-full overflow-hidden bg-gradient-to-b from-slate-50 to-emerald-50/40">
                         <img :src="product.gambar || getFallbackImage(product.kategori)" 
                              :alt="product.nama" 
+                             loading="lazy"
                              class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
                         
                         <!-- Soft Vignette Shadow Bawah Foto -->
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60"></div>
                         
-                        <!-- Badges Tipe Produk (Pill Mewah) -->
+                        <!-- Badges Tipe Produk -->
                         <div class="absolute top-3.5 left-3.5">
                             <span class="px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-wider shadow-sm backdrop-blur-md border border-white/40"
                                   :class="product.tipe === 'Fisik' 
@@ -1013,8 +1113,9 @@
                         <!-- Kategori Mini Tag -->
                         <span class="text-[10px] text-emerald-700 uppercase tracking-widest font-bold mb-1.5" x-text="product.kategori"></span>
                         
-                        <!-- Nama Produk (Teks Gelap Jelas Terbaca) -->
+                        <!-- Nama Produk -->
                         <h4 class="text-base sm:text-lg font-serif font-bold text-slate-900 mb-2 leading-snug group-hover:text-emerald-800 transition line-clamp-1" 
+                            :title="product.nama"
                             x-text="product.nama"></h4>
                         
                         <!-- Deskripsi Produk -->
@@ -1030,7 +1131,8 @@
                             </div>
 
                             <!-- Tombol Keranjang (+) Bergaya Permata -->
-                            <button @click="addToCart(product)" 
+                            <button type="button"
+                                    @click="addToCart(product)" 
                                     aria-label="Tambah ke Keranjang"
                                     class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200/90 group-hover:bg-gradient-to-r group-hover:from-emerald-600 group-hover:to-teal-700 group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_8px_20px_rgba(5,150,105,0.3)] transition-all duration-300 flex items-center justify-center shrink-0 active:scale-90">
                                 <i class="fa-solid fa-plus text-xs sm:text-sm"></i>
@@ -1039,20 +1141,32 @@
 
                     </div>
                 </div>
-
             </template>
+
         </div>
         
         <!-- ============================================================= -->
-        <!-- 5. EMPTY STATE (TAMPILAN MEWAH JIKA PRODUK KOSONG)           -->
+        <!-- 6. EMPTY STATE (JIKA HASIL CARI ATAU KATEGORI TIDAK DITEMUKAN)-->
         <!-- ============================================================= -->
         <div x-show="!loadingProducts && filteredProducts.length === 0" 
-             class="text-center py-16 sm:py-20 bg-white/80 rounded-3xl border border-emerald-100 max-w-lg mx-auto shadow-sm" x-cloak>
-            <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-100">
-                <i class="fa-solid fa-box-open"></i>
+             class="text-center py-16 sm:py-20 bg-white/90 rounded-3xl border border-emerald-100 max-w-md mx-auto shadow-sm backdrop-blur-xl px-6" 
+             x-cloak>
+            
+            <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-4 border border-emerald-200/70 shadow-sm">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <h3 class="text-lg font-serif font-bold text-slate-900 mb-1">Belum Ada Produk</h3>
-            <p class="text-xs text-slate-500 px-6">Kategori ini sedang kosong atau sedang disiapkan oleh Admin Toko.</p>
+            
+            <h4 class="text-base sm:text-lg font-serif font-bold text-slate-900 mb-1.5">Produk Tidak Ditemukan</h4>
+            
+            <p class="text-xs text-slate-500 leading-relaxed max-w-xs mx-auto mb-5">
+                Tidak ada produk yang cocok dengan kata kunci <span class="font-bold text-emerald-800" x-text="'&ldquo;' + searchQuery + '&rdquo;'"></span> pada kategori terpilih.
+            </p>
+
+            <button type="button"
+                    @click="searchQuery = ''; activeCategory = 'Semua'"
+                    class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition active:scale-95">
+                Reset Pencarian
+            </button>
         </div>
 
     </div>
@@ -4065,11 +4179,28 @@ get finalTotal() {
                         this.loadingProducts = false;
                     }
                 },
+                // 1. Tambahkan state ini di dalam pbApp():
+searchQuery: '',
 
-                get filteredProducts() {
-                    if (this.activeCategory === 'Semua') return this.products;
-                    return this.products.filter(p => p.kategori === this.activeCategory);
-                },
+// 2. Perbarui getter filteredProducts menjadi seperti ini:
+get filteredProducts() {
+    return this.products.filter(p => {
+        // Filter berdasarkan kategori tab aktif
+        const matchesCategory = (this.activeCategory === 'Semua' || p.kategori === this.activeCategory);
+        
+        // Filter berdasarkan teks input pencarian
+        const q = (this.searchQuery || '').trim().toLowerCase();
+        if (!q) return matchesCategory;
+
+        const nameMatch = p.nama && p.nama.toLowerCase().includes(q);
+        const descMatch = p.deskripsi && p.deskripsi.toLowerCase().includes(q);
+        const catMatch = p.kategori && p.kategori.toLowerCase().includes(q);
+
+        return matchesCategory && (nameMatch || descMatch || catMatch);
+    });
+},
+
+             
 
                 getFallbackImage(category) {
                     // Menentukan gambar default jika admin tidak memasukkan link gambar di DB
