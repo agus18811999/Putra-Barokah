@@ -1133,6 +1133,7 @@
                             <option value="Jam Dinding & Jam Beker Klasik">Jam Dinding & Jam Beker Klasik</option>
                             <option value="Suku Cadang & Aksesoris Khusus">Suku Cadang & Aksesoris Khusus</option>
                             <option value="Jas Hujan / Perlengkapan Khusus">Jas Hujan / Perlengkapan Khusus</option>
+                            <option value="Fashion & Pakaian Khusus (Jaket/Kemeja/Seragam)">Fashion & Pakaian Khusus (Jaket/Kemeja/Seragam)</option>
                             <option value="Kebutuhan Khusus Lainnya">Kebutuhan Khusus Lainnya</option>
                         </select>
                     </div>
@@ -3114,6 +3115,7 @@ availableCoupons: [
     { code: 'SERVIS20', name: 'Diskon Jasa Servis', percent: 20, cat: 'Jasa Servis', desc: 'Khusus layanan Jasa Servis' },
     { code: 'AKSESORIS5', name: 'Diskon Aksesoris', percent: 5, cat: 'Aksesoris', desc: 'Khusus produk Aksesoris' },
     { code: 'JASHUJAN10', name: 'Diskon Jas Hujan', percent: 10, cat: 'Jas Hujan', desc: 'Khusus produk Jas Hujan' },
+    { code: 'FASHION10', name: 'Diskon Fashion', percent: 10, cat: 'Fashion', desc: 'Khusus koleksi Fashion & Pakaian' },
     { code: 'PULSA2', name: 'Diskon Pulsa Digital', percent: 2, cat: 'Pulsa', desc: 'Khusus produk Pulsa Digital' }
 ],
 // TAMBAHKAN DATA TESTIMONI INI DI PBAPP() INDEX.HTML
@@ -4075,7 +4077,8 @@ get finalTotal() {
                         'Jas Hujan': 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=600&q=80',
                         'Pulsa': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80',
                          'Jam Dinding': 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&q=80', // 
-                        'Jasa Servis': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'
+                        'Jasa Servis': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80',
+                        'Fashion': 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80'
                     };
                     return fallbacks[category] || 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80';
                 },
